@@ -35,8 +35,6 @@ def set_servo_angle(angle):
     duty_cycle = SERVO_MIN_DUTY + (angle / 180) * (SERVO_MAX_DUTY - SERVO_MIN_DUTY)
     servo_pwm.ChangeDutyCycle(duty_cycle)
     time.sleep(2)# Give some time for the servo to move
-    servo_pwm.ChangeDutyCycle(0)  # Stop sending signals (optional, but prevents buzzing)
-    time.sleep(2)
     GPIO.output(SERVO_PIN, GPIO.LOW)
 	
 
