@@ -39,18 +39,19 @@ try:
 	# Rotate right 45 degrees
 	rotate_motor(steps_right,GPIO.HIGH)
 	
-	time.sleep(5)
+	time.sleep(0.5)
+	GPIO.output(ENA_PIN,GPIO.HIGH)
 	# Rotate left 15 degrees
 	rotate_motor(steps_left,GPIO.LOW)
-	time.sleep(5)
-	
-	# Rotate left 15 degrees
-	rotate_motor(steps_left, GPIO.LOW)
-	time.sleep(5)
-	
-	# Rotate left 15 degrees
-	rotate_motor(steps_left,GPIO.LOW)
-	time.sleep(5)
+#	time.sleep(5)
+#	
+#	# Rotate left 15 degrees
+#	rotate_motor(steps_left, GPIO.LOW)
+#	time.sleep(5)
+#	
+#	# Rotate left 15 degrees
+#	rotate_motor(steps_left,GPIO.LOW)
+#	time.sleep(5)
 	
 except KeyboardInterrupt:
 	print("Program Interrupt")
