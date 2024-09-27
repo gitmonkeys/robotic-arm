@@ -54,9 +54,6 @@ def inverse_kinematics(L1, L2, L3, x, y, z):
 
     return theta1, theta2, theta3
 
-
-# Function to check if the point is within the workspace
-# Function to check if the point is within the workspace using the given equation
 def is_within_workspace(L1, L2, L3, x, y, z):
     # Calculate the distance squared between the base and the target point
     distance_squared = x ** 2 + y ** 2 + (z - L1) ** 2
@@ -71,7 +68,7 @@ def is_within_workspace(L1, L2, L3, x, y, z):
 
 # Main function for the program
 def main():
-    L1 = 30
+    L1 = 0
     L2 = 30
     L3 = 30
 
