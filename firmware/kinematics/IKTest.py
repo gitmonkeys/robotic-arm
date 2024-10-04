@@ -128,9 +128,9 @@ def main():
     # Define GPIO pins for three motors
     # Each motor has the structure: [PUL_PIN, DIR_PIN, ENA_PIN]
     stepper_motors = [
-        [22, 27, 17],  # Motor 1
-        [23, 24, 25],  # Motor 2
-        [5, 6, 13]  # Motor 3
+        [3, 5, 7],  # Motor 1
+        [22, 27, 17],  # Motor 2
+        [23, 24, 25]  # Motor 3
     ]
 
     pi = setup_motors(stepper_motors)  # Setup motors and return pi instance
