@@ -95,10 +95,6 @@ def main(stdscr):
                 set_servo_angle(0)  # Open the gripper (move to 0 degrees)
 
 
-
-
-
-
     except KeyboardInterrupt:
         print("Program interrupted")
 

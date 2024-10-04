@@ -122,8 +122,8 @@ def is_within_workspace(L1, L2, L3, x, y, z):
 def main():
     # Define the lengths of the arms
     L1 = 0
-    L2 = 13
-    L3 = 17
+    L2 = 365.76
+    L3 = 304.80
 
     # Define GPIO pins for three motors
     # Each motor has the structure: [PUL_PIN, DIR_PIN, ENA_PIN]
