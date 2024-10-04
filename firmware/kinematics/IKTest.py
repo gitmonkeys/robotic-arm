@@ -10,8 +10,8 @@ q3 = 90  # Move the third arm to CW
 
 # Function to convert degrees to microsteps
 def degrees_to_microsteps(degrees):
-    microsteps_per_revolution = 6400  # Number of microsteps per revolution
-    return int((degrees / 360.0) * microsteps_per_revolution)  # ratio
+    microsteps_per_revolution = 800  # Number of microsteps per revolution
+    return int((degrees / 360.0) * microsteps_per_revolution * 50)  # ratio
 
 
 # Function to initialize pigpio and setup motors
@@ -121,7 +121,7 @@ def is_within_workspace(L1, L2, L3, x, y, z):
 # Main function for the program
 def main():
     # Define the lengths of the arms
-    L1 = 14
+    L1 = 0
     L2 = 13
     L3 = 17
 

@@ -65,8 +65,8 @@ def move_to_target(angles, delay_step):
         print(f"Control motor {i + 1} with angle {angles[i]} degrees, microsteps: {microsteps}")
         target(stepper_motors[i], microsteps, delay_step)
 
-
 """
+
 def home(motor, microsteps, delay):
     # Reverse the direction by negating microsteps
     microsteps = -microsteps
@@ -83,8 +83,8 @@ def home(motor, microsteps, delay):
         time.sleep(delay)       # Hold pulse
         pi.write(motor[0], 0)  # Turn off pulse
         time.sleep(delay)       # Wait before next step  
-"""
 
+"""
 
 def move_to_home(angles, delay_step):
     for i in range(2, -1, -1):  # Change loop to start from motor 2, 1, 0
