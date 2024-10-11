@@ -18,8 +18,7 @@ def degrees_to_microsteps(degrees, motor_id):
     microsteps_per_revolution = 800  # Number of microsteps per revolution
     # Define gear ratios for each motor
     gear_ratios = {
-        # Examples
-        1: 50,  # Motor 1: gear ratio 
+        1: 50,  # Motor 1: gear ratio
         2: 50,  # Motor 2: gear ratio
         3: 30  # Motor 3: gear ratio
     }
