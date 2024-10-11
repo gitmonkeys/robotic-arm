@@ -69,8 +69,8 @@ def is_within_workspace(L1, L2, L3, x, y, z):
 # Main function for the program
 def main():
     L1 = 0
-    L2 = 30
-    L3 = 30
+    L2 = 30.48
+    L3 = 25.40
 
     # Input the end-effector coordinates from the user
     x = float(input("Enter x coordinate: "))
