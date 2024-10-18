@@ -1,0 +1,50 @@
+<annotation>
+	<folder>images2</folder>
+	<filename>IMG_0963.jpeg</filename>
+	<path>C:\Users\choth\Downloads\images2\IMG_0963.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>trash paper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4</xmin>
+			<ymin>2327</ymin>
+			<xmax>759</xmax>
+			<ymax>3156</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>trash paper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1039</xmin>
+			<ymin>2227</ymin>
+			<xmax>1610</xmax>
+			<ymax>2823</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>trash bottle</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1768</xmin>
+			<ymin>475</ymin>
+			<xmax>2756</xmax>
+			<ymax>3385</ymax>
+		</bndbox>
+	</object>
+</annotation>
