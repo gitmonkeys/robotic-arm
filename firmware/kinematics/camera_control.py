@@ -98,6 +98,8 @@ def get_sorted_object_coordinates():
 
     # Return the image with drawn objects
     return frame
+    
+"""
 
 # Main program to call the function and print the scanned object coordinates
 if __name__ == "__main__":
@@ -117,3 +119,5 @@ if __name__ == "__main__":
             break
     cv2.waitKey(0)  # Wait for a key press before closing the window
     cv2.destroyAllWindows()  # Clean up the window
+
+"""
