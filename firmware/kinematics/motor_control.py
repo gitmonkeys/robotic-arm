@@ -11,7 +11,7 @@ DIR_PIN_1 = 27
 ENA_PIN_1 = 17
 gear_ratio1 = 90/20 # =4.5
 
-# GPIO pins for sencond stepper
+# GPIO pins for second stepper
 PUL_PIN_2 = 23
 DIR_PIN_2 = 24
 ENA_PIN_2 = 25
@@ -19,9 +19,9 @@ gear_ratio2 = 4.5
 
 # GPIO pins for third stepper
 #examples
-PUL_PIN_3 = 1
-DIR_PIN_3 = 7
-ENA_PIN_3 = 8
+PUL_PIN_3 = 2
+DIR_PIN_3 = 3
+ENA_PIN_3 = 4
 gear_ratio3 = 90/25
 
 # Constants
@@ -40,43 +40,39 @@ def initialize_position():
     """
     Set initial positions: open the gripper and set the main servo motor to 90 degrees.
     """
-   
-   
+    
+    
     global gripper_position
     gripper_position = 0
     open_gripper()          # Open the gripper
-   
+    
     pi.write(ENA_PIN_1, 1)  # Turn on stepper motor 1
     pi.write(ENA_PIN_2, 1)  # Turn on stepper motor 2
     pi.write(ENA_PIN_3, 1)  # Turn on stepper motor 3
-   
+    
 def clear_gpio():
     pi.set_servo_pulsewidth(GRIPPER_SERVO_GPIO, 0)  # Turn off the gripper servo
     pi.write(ENA_PIN_1, 0)  # Turn off stepper motor 1
     pi.write(ENA_PIN_2, 0)  # Turn off stepper motor 2
     pi.write(ENA_PIN_3,0)
     pi.stop()  # Disconnect from pigpio
- 
+  
 def move_servo_smoothly(target_position, step_duration):
     # Initial position for gripper
     global gripper_position
-    pi.set_servo_pulsewidth(GRIPPER_SERVO_GPIO, int(500 + (gripper_position / 270.0) * 2000))  #
-   
+    pi.set_servo_pulsewidth(GRIPPER_SERVO_GPIO, int(500 + (gripper_position / 270.0) * 2000))  # 
+    
     while gripper_position != target_position:
         if gripper_position < target_position:
             gripper_position += 1  # Increase angle
         else:
             gripper_position -= 1  # Decrease angle
-       
+        
         pulse_width = int(500 + (gripper_position / 270.0) * 2000)
         pi.set_servo_pulsewidth(GRIPPER_SERVO_GPIO, pulse_width)
-       
+        
         time.sleep(step_duration)  # delay
-"""
-def move_servo(position):
-    pulse_width = int(500 + (position / 270.0) * 2000)
-    pi.set_servo_pulsewidth(SERVO_GPIO, pulse_width)
-"""
+
 def move_gripper(position):
     pulse_width = int(500 + (position / 180.0) * 2000)
     pi.set_servo_pulsewidth(GRIPPER_SERVO_GPIO, pulse_width)
@@ -98,40 +94,24 @@ def step_motor(pul_pin, dir_pin, microsteps, delay):
         time.sleep(delay)
         pi.write(pul_pin, 0)
         time.sleep(delay)
-"""
-def move_theta3(theta3):
-    global current_position  # Use global variable
-    if -135 <= theta3 <= 90:
-        target_position = current_position + theta3
-       
-        # Move from current_position to target_position
-        step = 1 if target_position > current_position else -1
-       
-        for pos in range(current_position, target_position + step, step):
-            move_servo(pos)
-            time.sleep(0.03)  # delay
 
-        current_position = target_position  # Update current position
-    else:
-        print("Out of bounds.")
-"""
 
 # Moving to target
 def go_target(theta1, theta2, theta3):
     print("Moving to target...")
-   
+    
     # Move first arm
     microsteps1 = degrees_to_microsteps(theta1, gear_ratio1)
     step_motor(PUL_PIN_1, DIR_PIN_1, microsteps1, delay)
-
+    
     # Move third arm
-    microsteps_3=degrees_to_microsteps(theta3, gear_ratio3)
-    step_motor(PULL_PIN_3, DIR_PIN_3, microsteps_3,delay)
-
+    microsteps3=degrees_to_microsteps(theta3, gear_ratio3)
+    step_motor(PUL_PIN_3, DIR_PIN_3, microsteps3,delay)
+    
     # Move second arm
     microsteps2 = degrees_to_microsteps(theta2, gear_ratio2)
     step_motor(PUL_PIN_2, DIR_PIN_2, microsteps2, delay)
-   
+    
     print("Pick up the object")
     # Close gripper
     close_gripper()
@@ -150,12 +130,12 @@ def go_trash(theta1, theta2, theta3):
     adjusted_theta1 = -theta1 - 15
     microsteps1 = degrees_to_microsteps(adjusted_theta1, gear_ratio1)
     step_motor(PUL_PIN_1, DIR_PIN_1, microsteps1, delay)
-   
+    
     print("Drop off the object")
     # Open gripper
     open_gripper()
     time.sleep(1)
-   
+    
     print("returning to home")
     # Return arms to initial position
     microsteps1_back = degrees_to_microsteps(15,gear_ratio1)
@@ -163,10 +143,10 @@ def go_trash(theta1, theta2, theta3):
 
     microsteps2_back = degrees_to_microsteps(45, gear_ratio2)
     step_motor(PUL_PIN_2, DIR_PIN_2, microsteps2_back, delay)
-   
-    microsteps_3 =degrees_to_microsteps(-theta3, gear_ratio3)
-    step_motor(PUL_PIN_3, DIR_PIN_3, microsteps_3,delay)
-   
+    
+    microsteps3 =degrees_to_microsteps(-theta3, gear_ratio3)
+    step_motor(PUL_PIN_3, DIR_PIN_3, microsteps3,delay)
+"""   
 try:
     initialize_position()
     while True:
@@ -174,25 +154,22 @@ try:
         if user_input.lower() == 'q':
             break
         theta1, theta2, theta3 = map(float, user_input.split(','))  # Split string into list
-       
+        
         # Move first arm
         microsteps1 = degrees_to_microsteps(theta1, gear_ratio1)
         step_motor(PUL_PIN_1, DIR_PIN_1, microsteps1, delay)
         time.sleep(2)
-        """        
-        # Move third arm
-        microsteps_3=degrees_to_microsteps(theta3, gear_ratio3)
-        step_motor(PUL_PIN_3, DIR_PIN_3, microsteps_3,delay)
-        time.sleep(2)
-        """        
+    
         # Move second arm
         microsteps2 = degrees_to_microsteps(theta2, gear_ratio2)
         step_motor(PUL_PIN_2, DIR_PIN_2, microsteps2, delay)
-       
+        
         #close the gripper
         close_gripper()
         time.sleep(2)
-
-
+	
+	
 finally:
-clear_gpio()
+	clear_gpio()
+
+"""
