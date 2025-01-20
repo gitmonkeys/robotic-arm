@@ -1,5 +1,4 @@
-# Autonomous Robotic Arm with 3 Degrees of Freedom (3DOF) Using Machine Learning and Object Detection
+# Autonomous Robotic Arm with 3 Degrees of Freedom Using Machine Learning and Object Detection
 
-This project aims to build an autonomous robotic arm that can adapt, learn and enhance its efficiency and versatility in performing assigned tasks.
-
-Still in the works...
+**Overview**
+This project involves designing and building an autonomous robotic arm with three degrees of freedom (3DOF) that uses machine learning (ML) and object detection for intelligent decision-making. The robotic arm is capable of identifying, tracking, and interacting with objects in its workspace autonomously.
