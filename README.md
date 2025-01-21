@@ -6,7 +6,7 @@ This project involves designing and building an autonomous robotic arm with thre
 
 **Requirements**
 
- * **Hardware**
+* **Hardware**
 
 1. Motors:
    * 2x Nema 23 Closed Loop Stepper Motor 3Nm for the base and shoulder joint. [Link](https://www.omc-stepperonline.com/nema-23-closed-loop-stepper-motor-3nm-425oz-in-with-magnetic-encoder-1000ppr-4000cpr-23hs45-4204-me1k)   
@@ -28,3 +28,7 @@ This project involves designing and building an autonomous robotic arm with thre
 6. Camera Module:
    * Logitech - C270 720P Webcam. [Link](https://www.bestbuy.com/site/logitech-c270-720-webcam-with-noise-reducing-mics-black/9928354.p?skuId=9928354)
 
+* **Software**
+
+  * Object Detection Framework: Tensorflow Lite with MobilenetSSD
+  * Libraries: pigpiod, openCV, numPy
