@@ -2,4 +2,4 @@
 
 **Overview**
 
-This project involves designing and building an autonomous robotic arm with three degrees of freedom (3DOF) that uses machine learning (ML) and object detection for intelligent decision-making. The robotic arm can identify, track, and interact with objects in its workspace autonomously. The inspiration for this project comes from Dum-E, the robotic assistant in the Iron Man movie. Our group wants to build an arm that could compete with industrial automation in both price and efficiency. 
+This project involves designing and building an autonomous robotic arm with three degrees of freedom (3DOF) that uses machine learning (ML) and object detection for intelligent decision-making. The robotic arm can autonomously identify, track, and interact with objects in its workspace. The inspiration for this project comes from Dum-E, the robotic assistant in the Iron Man movie. Our group wants to build an arm that could compete with industrial automation in price and efficiency. 
