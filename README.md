@@ -8,5 +8,5 @@ This project involves designing and building an autonomous robotic arm with thre
 
 **Hardware**
 
-1. Motors: 2x Nema 23 Closed Loops Stepper Motor 3Nm for base and shoulder [Link](https://www.omc-stepperonline.com/nema-23-closed-loop-stepper-motor-3nm-425oz-in-with-magnetic-encoder-1000ppr-4000cpr-23hs45-4204-me1k)
-            
+1. Motors: 2x Nema 23 Closed Loop Stepper Motor 3Nm for the base and shoulder joint. [Link](https://www.omc-stepperonline.com/nema-23-closed-loop-stepper-motor-3nm-425oz-in-with-magnetic-encoder-1000ppr-4000cpr-23hs45-4204-me1k)
+            1x Nema 23 Closed Loop Stepper Motor 1.85Nm for elbow joint. [Link]([url](https://www.omc-stepperonline.com/nema-23-closed-loop-stepper-motor-1-85nm-256-9oz-in-with-magnetic-encoder-1000ppr-4000cpr-23hs30-2804-me1k))
