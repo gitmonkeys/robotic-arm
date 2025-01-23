@@ -33,4 +33,4 @@ This project involves designing and building an autonomous robotic arm with thre
   * Object Detection Framework: Tensorflow Lite with MobilenetSSD
   * Libraries: pigpiod, openCV, numPy
 
-**Related Link** : 
+**Related Link** : [Presentation](https://drive.google.com/file/d/11MK3jkFFWJjc2J69ZWIUt4JH5KeWML4S/view?usp=sharing)  [Video](https://drive.google.com/file/d/14PpU2gKORRkf9S9HrM6rWyZ0WrCm3C_z/view?usp=sharing)
